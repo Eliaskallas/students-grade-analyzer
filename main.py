@@ -1,23 +1,17 @@
 # fuction 'display_student_summary' : Prints students names and grades
-
 def display_student_summary (S,G):
-    
     for i in range(len(S)):
         print('Name :', S[i] , ', Grade :', G[i])
 
 # function 'get_avg_grade' : Prints the average grade of the class
-
 def get_avg_grade (G):
-    
     sum = 0
     for i in range(len(G)):
         sum += float(G[i])
     return float(sum/len(G))
 
 # function 'get_heighest_grade' : Prints the highest grade earned (Student name and grade)
-
 def get_heighest_grade (S,G):
-
     j = 0
     k = 0
     for i in range(len(S)):
@@ -27,9 +21,14 @@ def get_heighest_grade (S,G):
     print('The highest grade is', j, 'earned by :', S[k])
 
 # function 'count_passed' : Prints the count of students who passed (grade >= 60)
+def count_passed (G):
+    count = 0    
+    for i in range(len(G)):
+        if G[i] >= 60:
+            count += 1
+    return count
 
 # main program
-
 num_of_students = int(input('Kindly enter the number of students : '))
 while num_of_students <= 0:
     print('The number of the students must be positive')
@@ -51,3 +50,4 @@ while num_of_students > 0:
 display_student_summary (names,grades)
 print('The average grade of the class is :', get_avg_grade (grades))
 get_heighest_grade (names,grades)
+print('The count of students who passed (grade >= 60) is :', count_passed (grades))
